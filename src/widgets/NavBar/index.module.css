@@ -1,0 +1,79 @@
+.container {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  background: #eeeeeeee;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.pageTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #373737;
+  flex: 1;
+}
+
+.pageMenu {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  cursor: pointer;
+}
+
+.menuIcon {
+  height: 100%;
+  fill: #373737;
+  transition: fill 250ms ease-in-out 0ms;
+}
+
+.menuIcon:hover {
+  fill: #676767;
+}
+
+.menuIconOpened {
+  fill: #676767;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  right: 0%;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 250ms ease-in-out 0ms;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdownMenuCollapsed {
+  /* max-height: 0px; */
+}
+
+.innerDropdownMenu {
+  all: unset;
+  flex: 1;
+}
+
+.dropdownMenuItem {
+  all: unset;
+  cursor: pointer;
+  display: block;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: #eeeeee;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  transition: background 250ms ease-in-out 0ms;
+  user-select: none;
+}
+
+.dropdownMenuItem:hover {
+  background: #dddddd;
+}

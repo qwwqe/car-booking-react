@@ -1,0 +1,110 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.carBookingTitle {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  color: black;
+  background: linear-gradient(
+    to right,
+    #fff 20%,
+    rgb(69, 222, 107) 40%,
+    rgb(100, 73, 200) 60%,
+    #fff 80%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #b31a1a59;
+  animation: swipe 5s ease-in-out infinite;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes swipe {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.loginPanel {
+  /* width: 20%; */
+  /* max-width: 800px; */
+  /* min-width: 200px; */
+  /* min-height: 200px; */
+  /* border: 2px solid grey; */
+  /* border-radius: 2px; */
+  /* padding: 10px; */
+}
+
+.inputBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputField {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  align-items: center;
+  font-size: 20px;
+}
+
+.inputElement {
+  appearance: none;
+  all: unset;
+  border: 1px solid #00000022;
+  border-radius: 2px;
+  cursor: text;
+  height: 25px;
+  transition: border 250ms ease-in-out 0ms;
+  padding: 5px 10px;
+}
+
+.inputElement:hover {
+  border: 1px solid #00000088;
+}
+
+.inputElement:focus {
+  border: 1px solid #00000088;
+}
+
+.buttonBlock {
+  display: flex;
+  gap: 5px;
+  width: 100%;
+}
+
+.button {
+  background-color: #aaaaaa10;
+  flex: 2;
+  border: transparent;
+  border-radius: 5px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 250ms ease-in-out 0ms;
+}
+
+.button:hover {
+  background-color: #aaaaaa50;
+}
+
+.loginButton {
+  flex: 2;
+}
+
+.registerButton {
+  flex: 1;
+}
