@@ -7,6 +7,9 @@ declare const styles: {
   readonly "userCar": string;
   readonly "plate": string;
   readonly "owner": string;
+  readonly "createCar": string;
+  readonly "createCarTitle": string;
+  readonly "createCarInput": string;
 };
 export = styles;
 

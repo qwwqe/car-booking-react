@@ -17,6 +17,8 @@ export default function Cars(props: CarsProps) {
   } = useGlobalState();
   const api = useApi();
   const [cars, setCars] = useState<Car[]>([]);
+  // const [fetched, setFetched] = useState(false);
+  const [newCarPlate, setNewCarPlate] = useState("");
 
   const fetchCars = async () => {
     const result = await api.cars.search({});
@@ -26,14 +28,34 @@ export default function Cars(props: CarsProps) {
       return;
     }
 
+    // setFetched(true);
     setCars(result.data);
+  };
+
+  const handleCreateCar = async () => {
+    const result = await api.cars.create(
+      new Car({
+        userUuid: user.uuid,
+        plate: newCarPlate,
+      })
+    );
+
+    if (!result.ok) {
+      alert("註冊車輛失敗");
+      return;
+    }
+
+    fetchCars();
   };
 
   useEffect(() => {
     fetchCars();
   }, []);
 
-  console.log(user);
+  // useEffect(() => {
+  //   if (fetched && !cars.length) {
+  //   }
+  // }, [fetched, cars]);
 
   return (
     <div className={Styles.container}>
@@ -51,6 +73,17 @@ export default function Cars(props: CarsProps) {
               <div className={Styles.owner}>{c.userUuid}</div>
             </div>
           ))}
+        </div>
+        <div className={Styles.createCar}>
+          <div className={Styles.createCarTitle}>註冊新車</div>
+          <input
+            value={newCarPlate}
+            onChange={(e) => {
+              setNewCarPlate(e.target.value);
+            }}
+            className={Styles.createCarInput}
+          />
+          <button onClick={() => handleCreateCar()}>註冊</button>
         </div>
       </div>
     </div>

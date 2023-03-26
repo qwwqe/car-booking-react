@@ -26,7 +26,7 @@ export default class CarsApi extends CrudApi<Car> {
 
   async create(car: Car): ApiResultPromise<Car> {
     return ApiCall(async () => {
-      const response = await this.ky.post("cars", {
+      const response = await this.ky.post("booking/cars", {
         json: {
           uuid: car.uuid,
           plate: car.plate,
